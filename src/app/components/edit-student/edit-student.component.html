@@ -1,0 +1,25 @@
+<h3>Edit Student Details</h3>
+<div *ngIf="message" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Student Details Updated Successfully</strong>
+  <button (click)="removeMessage()" type="button" data-bs-dismiss="alert" aria-label="Close">X</button>
+</div>
+<form [formGroup]="editStudent" (ngSubmit)="UpdateData()">
+    <div class="mb-3">
+      <label class="form-label">ID</label>
+      <input type="number" class="form-control" placeholder="Enter ID" formControlName="id" [attr.disabled]="true">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Name</label>
+      <input type="text" class="form-control" placeholder="Enter Name" formControlName="sname" >
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Age</label>
+      <input type="number" class="form-control" placeholder="Enter Age" formControlName="age">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Branch</label>
+      <input type="text" class="form-control" placeholder="Enter Branch" formControlName="branch">
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>&nbsp;
+    <button class="btn btn-primary" type="button" routerLink="/list">Back to List</button>
+  </form>
